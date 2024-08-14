@@ -1,0 +1,67 @@
+
+table {
+    width: 70%;
+    border-collapse: collapse;
+    margin: 100px;
+    margin-left: 300px;
+  }
+  
+  th,
+  td {
+    padding: 6px;
+    text-align: left;
+    border: 1px solid #080808;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  th {
+    color: rgb(4, 15, 5);
+    text-align: center;
+  
+  }
+  
+  tr:hover {
+    background-color: #F3FDE8;
+    /* border: 2px solid blueviolet; */
+  
+  }
+  
+  .dd {
+    background-color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(15, 15, 17);
+    
+  }
+  
+  
+  /* thead {
+    border-bottom: 2px solid black; /* Adjust the color and thickness of the line as needed */
+  /* } */
+  /* 
+  tr:nth-child(even) {
+    background-color: #161515;
+  } */
+  
+  /* Remove background-color and adjust border properties for minimal lines */
+  th,
+  td {
+    background-color: transparent;
+  }
+  
+  tr {
+    background-color: transparent;
+  }
+
+  .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height based on your layout */
+  }
+  table td:nth-child(1) {
+    width: 400px;
+  }
+  td{
+    text-align: center;
+  }
+  

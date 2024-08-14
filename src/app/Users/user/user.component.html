@@ -1,0 +1,87 @@
+<app-dashboard></app-dashboard>
+<div class="main-content">
+  <div class="header-container">
+    <h2>Users</h2>
+    <input type="text" [(ngModel)]="searchText" placeholder="Search..." class="small-search-bar">
+  </div>
+<table class="user-list">
+  <thead>
+  <tr>
+    <th>Username</th>
+    <th>Type of User</th>
+    <th>Mobile No.</th>
+    <th>Email ID</th>
+<!--    <th>Password</th>-->
+    <th>Actions</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let user of users | filter:searchText">
+    <td>{{ user.Username }}</td>
+    <td>{{user.Usertype}}</td>
+    <td>{{ user.MobileNumber }}</td>
+    <td>{{ user.EmailAddress }}</td>
+<!--    <td>{{user.Password}}</td>-->
+    <td>
+
+      <button (click)="editUser(user, $event)">
+        <i class="fas fa-edit"></i> <!-- Font Awesome edit icon -->
+      </button>
+      <button (click)="deleteUser(user)">
+        <i class="fas fa-trash-alt"></i> <!-- Font Awesome delete icon -->
+      </button>
+    </td>
+
+  </tr>
+  </tbody>
+</table>
+
+<!-- Add User button -->
+<!--<button class="add-user-button" routerLink="/nav/add-user">Add User</button>-->
+
+
+
+
+<!-- Edit form -->
+<div class="edit" *ngIf="editingUser" [ngStyle]="{'top.px': editFormPosition.top, 'left.px': editFormPosition.left, 'position': 'absolute'}">
+  <label for="Username">Username:</label>
+  <input id="Username" type="text" [(ngModel)]="editingUser.Username" placeholder="Username">
+
+  <div>
+    <label for="userType">Type of User:</label>
+    <select id="userType" [(ngModel)]="editingUser.Usertype">
+      <option value="" disabled selected>Select Type</option>
+      <option value="Admin">Admin</option>
+      <option value="ServiceHandler">Service Handler</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="mobile">Mobile Number:</label>
+    <input id="mobile" type="text" [(ngModel)]="editingUser.MobileNumber" placeholder="Mobile Number">
+  </div>
+  <div>
+    <label for="email">Email Address:</label>
+    <input id="email" type="email" [(ngModel)]="editingUser.EmailAddress" placeholder="Email Address">
+  </div>
+
+  <div>
+    <label for="password">Password:</label>
+    <div class="password-container">
+      <input id="password" [type]="passwordFieldType" [(ngModel)]="editingUser.Password" placeholder="Password">
+      <i class="fas" [ngClass]="passwordFieldType === 'password' ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility()" style="cursor: pointer; margin-left: 5px;">
+      </i>
+    </div>
+  </div>
+
+  <div>
+    <button (click)="updateUser(); closeForm()">Update</button>
+    <button (click)="closeForm()">Close</button>
+  </div>
+  <div *ngIf="updateMessage">{{ updateMessage }}</div>
+</div>
+
+
+</div>
+

@@ -1,0 +1,89 @@
+<app-dashboard></app-dashboard>
+<div class="main-content">
+  <div class="header-container">
+    <h2>Service Requests</h2>
+    <input type="text" [(ngModel)]="searchText" placeholder="Search..." class="small-search-bar">
+  </div>
+
+  <table class="service-list">
+    <thead>
+      <tr>
+        <th class="dd">ServiceRequest Date</th>
+        <th class="dd">Service Request By</th>
+        <th class="dd">Phone No</th>
+        <th class="dd">Email Id</th>
+        <th class="dd">Service Requested</th>
+        <th class="dd">Other Details</th>
+        <th class="dd">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of sortedData | filter: searchText">
+        <td class="aa">{{ user.date }}</td>
+        <td class="bb">{{user.name }}</td>
+        <td>{{user.phoneNumber}}</td>
+        <td> {{ user.email }}</td>
+        <td> {{ user.service }}</td>
+        <td>{{ user.message }} </td>
+        <td>
+          <button (click)="editService(user, $event)">
+            <i class="fas fa-edit"></i> <!-- Font Awesome edit icon -->
+          </button>
+          <button (click)="deleteService(user)">
+            <i class="fas fa-trash-alt"></i> <!-- Font Awesome delete icon -->
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+  <!-- Edit form -->
+  <div class="edit" *ngIf="editingService" [ngStyle]="{'top.px': editFormPosition.top, 'left.px': editFormPosition.left, 'position': 'absolute'}">
+    <label for="name">Name:</label>
+    <input id="name" type="text" [(ngModel)]="editingService.name" placeholder="Name">
+
+    <div>
+      <label for="phoneNumber">Phone Number:</label>
+      <input id="phoneNumber" type="text" [(ngModel)]="editingService.phoneNumber" placeholder="Phone Number">
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" type="email" [(ngModel)]="editingService.email" placeholder="Email">
+    </div>
+    <div>
+      <label for="service">Type Of Service:</label>
+      <select id="service" [(ngModel)]="editingService.service">
+        <option value="" disabled selected>Select Type</option>
+        <option value="Critical Care">Critical Care</option>
+        <option value="Nursing Assistance">Nursing Assistance</option>
+        <option value="Lab Assistance">Lab Assistance</option>
+        <option value="Medicine Delivery">Medicine Delivery</option>
+        <option value="Wound Care">Wound Care</option>
+        <option value="Medical Equipments">Medical Equipments</option>
+        <option value="Nutritionist">Nutritionist</option>
+        <option value="Skilled Nursing">Skilled Nursing</option>
+        <option value="Doctor Visit">Doctor Visit</option>
+        <option value="Physiotherapist">Physiotherapist</option>
+        <option value="Counceling">Counceling</option>
+
+      </select>
+
+    </div>
+
+    <div>
+      <label for="message">Description:</label>
+      <input id="message" type="text" [(ngModel)]="editingService.message" placeholder="Description">
+    </div>
+
+    <div>
+      <button (click)="updateService()">Update</button>
+      <button (click)="closeForm()">Close</button>
+    </div>
+    <div *ngIf="updateMessage">{{ updateMessage }}</div>
+  </div>
+
+
+</div>

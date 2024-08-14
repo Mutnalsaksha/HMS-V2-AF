@@ -1,0 +1,12 @@
+* body {
+    margin: 0px auto;
+    padding: 20px;
+}
+.card{
+    background-color: rgb(168, 240, 175);
+}
+strong{
+    color: rgb(238, 168, 155);
+    margin-left: 119px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

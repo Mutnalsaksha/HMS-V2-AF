@@ -1,0 +1,90 @@
+/* login.component.css */
+/* * {
+  background-image: url('../assets/loginbackimg.jpg');
+} */
+
+/* Center the form */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Adjust the height as needed */
+}
+.login-container {
+  background-image: url('../../assets/loginbackimg1.jpg');
+  background-size: cover;
+  }
+  
+
+  /* Add additional background properties or styles as needed */
+
+
+/* Animated water effect */
+form {
+  position: relative;
+  width: 300px; /* Adjust the width as needed */
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color:rgba(255,255,255,0.8); /* Water background color */
+  box-shadow: 0 0 20px rgba(6, 5, 5, 0.1);
+  animation: waterEffect 3s infinite alternate;
+
+}
+
+/* @keyframes waterEffect {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-120px);
+  }
+} */
+
+/* Form styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #1da8ff; /* Label text color */
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #3498db; /* Input border color */
+  border-radius: 4px;
+  background-color: #ecf0f1; /* Input background color */
+  color: #2c3e50; /* Input text color */
+}
+
+button {
+  background-color: #3498db; /* Button background color */
+  color: white;
+  padding: 10px 35px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block; /* Ensure it's a block-level element */
+  margin: 0 auto; /* Center the button horizontally */
+}
+
+button:hover {
+  background-color: #2980b9; /* Button hover background color */
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+#btn2{
+/* background-color: rgba(255,255,255,0.8);; */
+background-color: rgba(0, 0, 0, 0);
+}
+/* Add additional styles as needed */

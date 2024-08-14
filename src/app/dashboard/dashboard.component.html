@@ -1,0 +1,66 @@
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item" (click)="toggleSubOptions('servicesRequests')">
+            <a class="nav-link active" aria-current="page" routerLink="/nav/bookingmanagment" routerLinkActive="active">
+              <h6>Services Requests <i class="fas fa-chevron-down"></i></h6>
+              <hr>
+            </a>
+            <!-- Sub-options for Services Requests -->
+            <ul class="nav flex-column pl-3" id="servicesRequestsSubOptions" *ngIf="showSubOptions['servicesRequests']">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/nav/add-sr">Add Service Requests</a>
+              </li>
+              <!-- Add more sub-options here if needed -->
+            </ul>
+          </li>
+          <li class="nav-item" (click)="toggleSubOptions('users')">
+            <a class="nav-link active" aria-current="page" routerLink="/nav/user" routerLinkActive="active">
+              <h6>Users <i class="fas fa-chevron-down"></i></h6>
+              <hr>
+            </a>
+            <!-- Sub-options for user -->
+            <ul class="nav flex-column pl-3" id="usersSubOptions" *ngIf="showSubOptions['users']">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/nav/add-user">Add Users</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item" (click)="toggleSubOptions('reports')">
+            <a class="nav-link active" aria-current="page" routerLink="/nav/report" routerLinkActive="active">
+              <h6> Reports <i class="fas fa-chevron-down"></i></h6>
+              <hr>
+            </a>
+            <!-- Sub-options for Reports -->
+            <ul class="nav flex-column pl-3" id="reportsSubOptions"  *ngIf="showSubOptions['reports']">
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/nav/report']" [queryParams]="{ filter: '7days' }">All SR for 7 days</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/nav/report']" [queryParams]="{ filter: '30days' }">All SR for 30 days</a>
+              </li>
+              <!-- Add more sub-options here if needed -->
+            </ul>
+          </li>
+          <!-- Add other main options here -->
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file"></span>
+            </a>
+          </li>
+        </ul>
+        <!-- Add other items here -->
+        <ul class="nav flex-column nav-item-logout">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <h6>Logout</h6>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
+</div>
