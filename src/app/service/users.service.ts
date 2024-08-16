@@ -10,7 +10,7 @@ import {environment} from '../../environment/environment'
   providedIn: 'root',
 })
 export class Usersservice {
-  private apiUrl= 'http://localhost:2000'
+  private apiUrl= 'https://hms-v2-ab.onrender.com'
   constructor(private http: HttpClient) { }
   getusers() {
     console.log('Sending request to fetch users...');

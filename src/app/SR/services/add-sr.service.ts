@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AddSrService {
-  private baseUrl = 'http://localhost:2000';
+  private baseUrl = 'https://hms-v2-ab.onrender.com';
 
   constructor(private http: HttpClient) { }
 

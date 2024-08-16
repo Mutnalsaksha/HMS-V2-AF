@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AdduserService {
-  private apiUrl ='http://localhost:2000/api/users';
+  private apiUrl ='https://hms-v2-ab.onrender.com/api/users';
     constructor(private http: HttpClient) { }
 
   addUser(userData:any): Observable<any> {
