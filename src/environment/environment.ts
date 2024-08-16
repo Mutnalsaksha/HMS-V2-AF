@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:2000'//local backend url
+  apiUrl: 'https://hms-v2-ab.onrender.com'//local backend url
 };
