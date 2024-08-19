@@ -57,7 +57,6 @@ import { ReportComponent } from './Reports/report/report.component';
 export class AppModule
  {
   constructor(private router: Router) {
-    // console.log(this.router.config);
 
 }
  }

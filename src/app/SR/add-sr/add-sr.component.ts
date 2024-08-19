@@ -31,7 +31,4 @@ export class AddSrComponent {
         error => console.error(error)
       );
   }
-
-
-
 }

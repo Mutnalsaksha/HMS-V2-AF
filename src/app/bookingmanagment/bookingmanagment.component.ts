@@ -31,7 +31,7 @@ export class BookingmanagmentComponent implements OnInit {
       (data: any) => {
         this.users = data;
         this.sortedData = this.sortByDate(data);
-        console.log('Users loaded:', this.users);
+
       },
       (error) => {
         console.error('Error fetching users:', error);
@@ -54,7 +54,6 @@ export class BookingmanagmentComponent implements OnInit {
     const rect = targetElement.getBoundingClientRect();
     this.editFormPosition.top = rect.top + window.scrollY;
     this.editFormPosition.left = rect.left + window.scrollX;
-    console.log('Editing service:', this.editingService);
   }
 
   deleteService(user: any): void {
@@ -84,7 +83,6 @@ export class BookingmanagmentComponent implements OnInit {
             this.users.push(updatedService);
           }
           this.sortedData = this.sortByDate(this.users);
-          console.log('Service updated, updated users:', this.users);
           this.closeForm();
           this.updateMessage = 'User updated successfully';
         },
@@ -98,6 +96,5 @@ export class BookingmanagmentComponent implements OnInit {
   closeForm() {
     this.editingService = null;
     this.updateMessage = '';
-    console.log('Form closed');
   }
 }

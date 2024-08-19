@@ -30,7 +30,6 @@ export class ReportComponent {
       (data: any) => {
         this.users = data;
         this.sortedData = this.applyFilter(data);
-        console.log('Users loaded:', this.users);
       },
       (error) => {
         console.error('Error fetching users:', error);

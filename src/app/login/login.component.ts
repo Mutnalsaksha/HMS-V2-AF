@@ -48,7 +48,6 @@ export class LoginComponent implements OnInit{
       if (enteredEmail && enteredPassword) {
         this.loginService.login(enteredEmail, enteredPassword).subscribe(
           (data: any) => {
-            console.log('Login response:', data);
             this.handleLoginResponse(data);
           },
           error => {
@@ -66,10 +65,8 @@ export class LoginComponent implements OnInit{
 
   private handleLoginResponse(response: any) {
     if (response.message === 'Login successful') {
-      console.log('Login successful');
       this.router.navigate(['/nav/bookingmanagment']);
     } else {
-      console.log('Login failed');
       this.handleFailedLogin();
     }
   }

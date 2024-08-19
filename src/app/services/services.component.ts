@@ -12,8 +12,6 @@ export class ServicesComponent implements OnInit {
   ngOnInit(): void {
     this.servicesService.getservice().subscribe((data: any) => {
       this.servicesservice = data;
-      console.log(data);
-
     });
   }
 

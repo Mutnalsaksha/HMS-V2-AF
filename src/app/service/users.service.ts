@@ -13,7 +13,6 @@ export class Usersservice {
   private apiUrl= 'https://hms-v2-ab.onrender.com'
   constructor(private http: HttpClient) { }
   getusers() {
-    console.log('Sending request to fetch users...');
     // return this.http.get(`https://admin-backend-3.onrender.com/getBookedServicesData`)
     return this.http.get(`${this.apiUrl}/getBookedServicesData`)
       .pipe(
