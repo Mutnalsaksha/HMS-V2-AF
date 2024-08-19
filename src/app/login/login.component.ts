@@ -2,8 +2,6 @@ import { Component,OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { Router } from '@angular/router';
 import { LoginService} from "../servicelogin/login.service";
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -32,12 +30,7 @@ export class LoginComponent implements OnInit{
     return this.loginForm.get('password');
   }
 
-
-
-  ngOnInit(): void {
-
-
-  }
+  ngOnInit(): void { }
 
   onLoginClick() {
     if (this.loginForm.valid) {
@@ -51,7 +44,6 @@ export class LoginComponent implements OnInit{
             this.handleLoginResponse(data);
           },
           error => {
-            console.error('Error:', error);
             this.handleFailedLogin();
           }
         );

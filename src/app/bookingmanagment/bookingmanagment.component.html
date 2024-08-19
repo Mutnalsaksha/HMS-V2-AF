@@ -37,8 +37,6 @@
     </tbody>
   </table>
 
-
-
   <!-- Edit form -->
   <div class="edit" *ngIf="editingService" [ngStyle]="{'top.px': editFormPosition.top, 'left.px': editFormPosition.left, 'position': 'absolute'}">
     <label for="name">Name:</label>
@@ -68,9 +66,7 @@
         <option value="Doctor Visit">Doctor Visit</option>
         <option value="Physiotherapist">Physiotherapist</option>
         <option value="Counceling">Counceling</option>
-
       </select>
-
     </div>
 
     <div>
@@ -84,6 +80,5 @@
     </div>
     <div *ngIf="updateMessage">{{ updateMessage }}</div>
   </div>
-
 
 </div>

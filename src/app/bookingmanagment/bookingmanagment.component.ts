@@ -17,8 +17,6 @@ export class BookingmanagmentComponent implements OnInit {
 
   private services: any;
   private service: any;
-
-
   constructor(private usersservice: Usersservice) { }
 
 
@@ -31,7 +29,6 @@ export class BookingmanagmentComponent implements OnInit {
       (data: any) => {
         this.users = data;
         this.sortedData = this.sortByDate(data);
-
       },
       (error) => {
         console.error('Error fetching users:', error);

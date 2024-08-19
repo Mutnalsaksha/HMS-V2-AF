@@ -4,7 +4,6 @@ import {Usersservice} from "../../service/users.service";
 import * as moment from 'moment';
 import 'moment-timezone';
 
-
 @Component({
   selector: 'app-report',
   templateUrl: './report.component.html',

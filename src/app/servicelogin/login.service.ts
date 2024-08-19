@@ -29,7 +29,6 @@ export class LoginService  {
       // Server-side error
       errorMessage = error.error.error || error.statusText;
     }
-    console.error(errorMessage);
     return throwError(errorMessage);
   }
 }

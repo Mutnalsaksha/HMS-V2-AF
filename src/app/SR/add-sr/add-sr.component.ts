@@ -12,8 +12,6 @@ export class AddSrComponent {
   formData: any = {};
   showSuccessMessage: boolean = false;
 
-
-
   constructor(private fb: FormBuilder, private addSrService: AddSrService, private router: Router) {}
 
   onSubmit(form: NgForm) {
@@ -28,7 +26,6 @@ export class AddSrComponent {
             this.router.navigate(['/nav/bookingmanagment']); // navigate back to user page
           }, 3000); // hide success message after 3 seconds
         },
-        error => console.error(error)
       );
   }
 }

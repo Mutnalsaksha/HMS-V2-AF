@@ -7,9 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
   private apiUrl = 'https://hms-v2-ab.onrender.com/api/users';
-
   constructor(private http: HttpClient) { }
-
   getUsers(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }

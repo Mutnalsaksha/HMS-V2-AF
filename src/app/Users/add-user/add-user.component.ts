@@ -21,8 +21,6 @@ export class AddUserComponent {
 
   constructor(private userService: AdduserService, private router: Router) {}
 
-
-
   onSubmit(form: NgForm) {
     this.userService.addUser(this.formData)
       .subscribe(
@@ -35,7 +33,6 @@ export class AddUserComponent {
             this.router.navigate(['/nav/user']); // navigate back to user page
           }, 3000); // hide success message after 3 seconds
         },
-        error => console.error(error)
       );
   }
 }
