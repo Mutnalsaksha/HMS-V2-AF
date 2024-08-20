@@ -6,27 +6,27 @@
     <div class="mb-3">
       <label for="name" class="form-label">Name:</label>
       <input type="text" class="form-control" id="name" name="name" [(ngModel)]="formData.name" required pattern="[a-z,A-Z]+">
-      <div *ngIf="registrationForm.controls['name'].invalid && (registrationForm.controls['name'].dirty || registrationForm.controls['name'].touched)">
-        <small class="text-danger" *ngIf="registrationForm.controls['name'].errors?.['required']">Name is required</small>
-        <small class="text-danger" *ngIf="registrationForm.controls['name'].errors?.['pattern']">Name must contain only alphabets</small>
+      <div *ngIf="registrationForm.controls['name']?.invalid && (registrationForm.controls['name']?.dirty || registrationForm.controls['name']?.touched)">
+        <small class="text-danger" *ngIf="registrationForm.controls['name']?.errors?.['required']">Name is required</small>
+        <small class="text-danger" *ngIf="registrationForm.controls['name']?.errors?.['pattern']">Name must contain only alphabets</small>
       </div>
     </div>
 
     <div class="mb-3">
       <label for="mobile" class="form-label">Phone Number:</label>
       <input type="text" class="form-control" id="mobile" name="mobile" [(ngModel)]="formData.phoneNumber" required pattern="[0-9]{10}">
-      <div *ngIf="registrationForm.controls['mobile'].invalid && (registrationForm.controls['mobile'].dirty || registrationForm.controls['mobile'].touched)">
-        <small class="text-danger" *ngIf="registrationForm.controls['mobile'].errors?.['required']">Mobile number is required</small>
-        <small class="text-danger" *ngIf="registrationForm.controls['mobile'].errors?.['pattern']">Mobile number must contain only digits</small>
+      <div *ngIf="registrationForm.controls['mobile']?.invalid && (registrationForm.controls['mobile']?.dirty || registrationForm.controls['mobile']?.touched)">
+        <small class="text-danger" *ngIf="registrationForm.controls['mobile']?.errors?.['required']">Mobile number is required</small>
+        <small class="text-danger" *ngIf="registrationForm.controls['mobile']?.errors?.['pattern']">Mobile number must contain only digits</small>
       </div>
     </div>
 
     <div class="mb-3">
       <label for="email" class="form-label">Email ID:</label>
       <input type="email" class="form-control" id="email" name="email" [(ngModel)]="formData.email" required email>
-      <div *ngIf="registrationForm.controls['email'].invalid && (registrationForm.controls['email'].dirty || registrationForm.controls['email'].touched)">
-        <small class="text-danger" *ngIf="registrationForm.controls['email'].errors?.['required']">Email is required</small>
-        <small class="text-danger" *ngIf="registrationForm.controls['email'].errors?.['email']">Invalid email format</small>
+      <div *ngIf="registrationForm.controls['email']?.invalid && (registrationForm.controls['email']?.dirty || registrationForm.controls['email']?.touched)">
+        <small class="text-danger" *ngIf="registrationForm.controls['email']?.errors?.['required']">Email is required</small>
+        <small class="text-danger" *ngIf="registrationForm.controls['email']?.errors?.['email']">Invalid email format</small>
       </div>
     </div>
 
@@ -68,7 +68,7 @@
           Counceling
         </option>
       </select>
-      <div *ngIf="registrationForm.controls['serviceType'].invalid && (registrationForm.controls['serviceType'].dirty || registrationForm.controls['serviceType'].touched)">
+      <div *ngIf="registrationForm.controls['serviceType']?.invalid && (registrationForm.controls['serviceType']?.dirty || registrationForm.controls['serviceType']?.touched)">
         <small class="text-danger">Service type is required</small>
       </div>
     </div>
